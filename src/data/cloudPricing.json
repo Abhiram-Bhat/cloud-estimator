@@ -1,0 +1,806 @@
+{
+  "lastUpdated": "2024-01-15",
+  "exchangeRate": {
+    "usdToInr": 83.15
+  },
+  "services": [
+    {
+      "id": "aws-ec2-t3-micro",
+      "name": "EC2 t3.micro",
+      "category": "compute",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.0104,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "General purpose burstable performance instance",
+      "specifications": {
+        "vCPUs": "2",
+        "Memory": "1 GiB",
+        "Network": "Up to 5 Gigabit",
+        "Storage": "EBS Only"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-ec2-t3-small",
+      "name": "EC2 t3.small",
+      "category": "compute",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.0208,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "General purpose burstable performance instance",
+      "specifications": {
+        "vCPUs": "2",
+        "Memory": "2 GiB",
+        "Network": "Up to 5 Gigabit",
+        "Storage": "EBS Only"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-ec2-m5-large",
+      "name": "EC2 m5.large",
+      "category": "compute",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.096,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "General purpose compute optimized instance",
+      "specifications": {
+        "vCPUs": "2",
+        "Memory": "8 GiB",
+        "Network": "Up to 10 Gigabit",
+        "Storage": "EBS Only"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-ec2-c5-xlarge",
+      "name": "EC2 c5.xlarge",
+      "category": "compute",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.17,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Compute optimized instance",
+      "specifications": {
+        "vCPUs": "4",
+        "Memory": "8 GiB",
+        "Network": "Up to 10 Gigabit",
+        "Storage": "EBS Only"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-lambda",
+      "name": "AWS Lambda",
+      "category": "compute",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.0000002,
+        "unit": "request",
+        "billingType": "per-request"
+      },
+      "description": "Serverless compute service",
+      "specifications": {
+        "Memory": "128 MB - 10 GB",
+        "Runtime": "Various languages",
+        "Timeout": "15 minutes max",
+        "Scaling": "Auto"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "azure-vm-b1s",
+      "name": "Virtual Machine B1s",
+      "category": "compute",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.0104,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Burstable performance virtual machine",
+      "specifications": {
+        "vCPUs": "1",
+        "Memory": "1 GiB",
+        "Storage": "4 GiB temp storage",
+        "Network": "Moderate"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-vm-b2s",
+      "name": "Virtual Machine B2s",
+      "category": "compute",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.0208,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Burstable performance virtual machine",
+      "specifications": {
+        "vCPUs": "2",
+        "Memory": "4 GiB",
+        "Storage": "8 GiB temp storage",
+        "Network": "Moderate"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-vm-d2s-v3",
+      "name": "Virtual Machine D2s v3",
+      "category": "compute",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.096,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "General purpose virtual machine",
+      "specifications": {
+        "vCPUs": "2",
+        "Memory": "8 GiB",
+        "Storage": "16 GiB temp storage",
+        "Network": "Moderate"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-functions",
+      "name": "Azure Functions",
+      "category": "compute",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.0000002,
+        "unit": "request",
+        "billingType": "per-request"
+      },
+      "description": "Serverless compute platform",
+      "specifications": {
+        "Memory": "128 MB - 1.5 GB",
+        "Runtime": "Various languages",
+        "Timeout": "10 minutes max",
+        "Scaling": "Auto"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "gcp-e2-micro",
+      "name": "Compute Engine e2-micro",
+      "category": "compute",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.008468,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Cost-optimized machine type",
+      "specifications": {
+        "vCPUs": "0.25-2 (shared)",
+        "Memory": "1 GB",
+        "Network": "1 Gbps",
+        "Storage": "Persistent disk"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-e2-small",
+      "name": "Compute Engine e2-small",
+      "category": "compute",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.016936,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Cost-optimized machine type",
+      "specifications": {
+        "vCPUs": "0.5-2 (shared)",
+        "Memory": "2 GB",
+        "Network": "1 Gbps",
+        "Storage": "Persistent disk"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-n1-standard-1",
+      "name": "Compute Engine n1-standard-1",
+      "category": "compute",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.0475,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Standard machine type with balanced CPU and memory",
+      "specifications": {
+        "vCPUs": "1",
+        "Memory": "3.75 GB",
+        "Network": "2 Gbps",
+        "Storage": "Persistent disk"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-cloud-functions",
+      "name": "Cloud Functions",
+      "category": "compute",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.0000004,
+        "unit": "request",
+        "billingType": "per-request"
+      },
+      "description": "Event-driven serverless compute",
+      "specifications": {
+        "Memory": "128 MB - 8 GB",
+        "Runtime": "Various languages",
+        "Timeout": "9 minutes max",
+        "Scaling": "Auto"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "aws-s3-standard",
+      "name": "S3 Standard",
+      "category": "storage",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.023,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "General purpose object storage",
+      "specifications": {
+        "Durability": "99.999999999%",
+        "Availability": "99.99%",
+        "Min Storage Duration": "None",
+        "Retrieval Fee": "None"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-s3-ia",
+      "name": "S3 Infrequent Access",
+      "category": "storage",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.0125,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "Infrequently accessed data storage",
+      "specifications": {
+        "Durability": "99.999999999%",
+        "Availability": "99.9%",
+        "Min Storage Duration": "30 days",
+        "Retrieval Fee": "$0.01/GB"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-ebs-gp3",
+      "name": "EBS GP3",
+      "category": "storage",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.08,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "General Purpose SSD storage",
+      "specifications": {
+        "Type": "SSD",
+        "IOPS": "3,000 baseline",
+        "Throughput": "125 MB/s baseline",
+        "Max IOPS": "16,000"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "azure-blob-hot",
+      "name": "Blob Storage Hot",
+      "category": "storage",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.0184,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "Frequently accessed data storage",
+      "specifications": {
+        "Durability": "99.999999999%",
+        "Availability": "99.9%",
+        "Min Storage Duration": "None",
+        "Retrieval Fee": "None"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-blob-cool",
+      "name": "Blob Storage Cool",
+      "category": "storage",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.01,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "Infrequently accessed data storage",
+      "specifications": {
+        "Durability": "99.999999999%",
+        "Availability": "99.9%",
+        "Min Storage Duration": "30 days",
+        "Retrieval Fee": "$0.01/GB"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-managed-disk-p4",
+      "name": "Managed Disk P4",
+      "category": "storage",
+      "provider": "azure",
+      "pricing": {
+        "usd": 1.54,
+        "unit": "disk/month",
+        "billingType": "monthly"
+      },
+      "description": "Premium SSD managed disk",
+      "specifications": {
+        "Size": "32 GB",
+        "IOPS": "120",
+        "Throughput": "25 MB/s",
+        "Type": "Premium SSD"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "gcp-standard-storage",
+      "name": "Cloud Storage Standard",
+      "category": "storage",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.020,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "Standard object storage",
+      "specifications": {
+        "Durability": "99.999999999%",
+        "Availability": "99.95%",
+        "Min Storage Duration": "None",
+        "Retrieval Fee": "None"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-nearline-storage",
+      "name": "Cloud Storage Nearline",
+      "category": "storage",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.010,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "Nearline storage for backup and archiving",
+      "specifications": {
+        "Durability": "99.999999999%",
+        "Availability": "99.9%",
+        "Min Storage Duration": "30 days",
+        "Retrieval Fee": "$0.01/GB"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-persistent-disk-ssd",
+      "name": "Persistent Disk SSD",
+      "category": "storage",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.17,
+        "unit": "GB/month",
+        "billingType": "monthly"
+      },
+      "description": "High-performance SSD persistent disk",
+      "specifications": {
+        "Type": "SSD",
+        "IOPS": "30 per GB",
+        "Throughput": "0.48 MB/s per GB",
+        "Max IOPS": "15,000"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "aws-rds-mysql-t3-micro",
+      "name": "RDS MySQL t3.micro",
+      "category": "database",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.017,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Managed MySQL database",
+      "specifications": {
+        "Engine": "MySQL 8.0",
+        "vCPUs": "2",
+        "Memory": "1 GiB",
+        "Storage": "20-65536 GiB"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-rds-postgres-t3-small",
+      "name": "RDS PostgreSQL t3.small",
+      "category": "database",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.034,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Managed PostgreSQL database",
+      "specifications": {
+        "Engine": "PostgreSQL 15",
+        "vCPUs": "2",
+        "Memory": "2 GiB",
+        "Storage": "20-65536 GiB"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-dynamodb",
+      "name": "DynamoDB",
+      "category": "database",
+      "provider": "aws",
+      "pricing": {
+        "usd": 1.25,
+        "unit": "million requests",
+        "billingType": "per-request"
+      },
+      "description": "NoSQL database service",
+      "specifications": {
+        "Type": "NoSQL",
+        "Throughput": "On-demand",
+        "Scaling": "Auto",
+        "Availability": "99.99%"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "azure-sql-basic",
+      "name": "Azure SQL Database Basic",
+      "category": "database",
+      "provider": "azure",
+      "pricing": {
+        "usd": 4.95,
+        "unit": "month",
+        "billingType": "monthly"
+      },
+      "description": "Basic tier managed SQL database",
+      "specifications": {
+        "Engine": "SQL Server",
+        "DTU": "5",
+        "Storage": "2 GB",
+        "Backup Retention": "7 days"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-sql-s0",
+      "name": "Azure SQL Database S0",
+      "category": "database",
+      "provider": "azure",
+      "pricing": {
+        "usd": 14.85,
+        "unit": "month",
+        "billingType": "monthly"
+      },
+      "description": "Standard tier managed SQL database",
+      "specifications": {
+        "Engine": "SQL Server",
+        "DTU": "10",
+        "Storage": "250 GB",
+        "Backup Retention": "35 days"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-cosmos-db",
+      "name": "Cosmos DB",
+      "category": "database",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.008,
+        "unit": "RU/hour",
+        "billingType": "hourly"
+      },
+      "description": "Multi-model NoSQL database",
+      "specifications": {
+        "Type": "Multi-model",
+        "Throughput": "400 RU/s minimum",
+        "Global Distribution": "Yes",
+        "APIs": "SQL, MongoDB, Cassandra"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "gcp-cloud-sql-mysql",
+      "name": "Cloud SQL MySQL db-f1-micro",
+      "category": "database",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.0150,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Managed MySQL database service",
+      "specifications": {
+        "Engine": "MySQL 8.0",
+        "vCPU": "0.6 (shared)",
+        "Memory": "0.6 GB",
+        "Storage": "Up to 3TB"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-cloud-sql-postgres",
+      "name": "Cloud SQL PostgreSQL db-g1-small",
+      "category": "database",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.0825,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Managed PostgreSQL database service",
+      "specifications": {
+        "Engine": "PostgreSQL 15",
+        "vCPU": "1 (shared)",
+        "Memory": "1.7 GB",
+        "Storage": "Up to 30TB"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-firestore",
+      "name": "Firestore",
+      "category": "database",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.18,
+        "unit": "100K operations",
+        "billingType": "per-request"
+      },
+      "description": "NoSQL document database",
+      "specifications": {
+        "Type": "NoSQL Document",
+        "Real-time": "Yes",
+        "Offline Support": "Yes",
+        "Auto-scaling": "Yes"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "aws-bedrock-claude",
+      "name": "Bedrock Claude",
+      "category": "ai-ml",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.008,
+        "unit": "1K input tokens",
+        "billingType": "per-request"
+      },
+      "description": "Claude AI model via Bedrock",
+      "specifications": {
+        "Model": "Claude 3.5 Sonnet",
+        "Context": "200K tokens",
+        "Multimodal": "Yes",
+        "Fine-tuning": "No"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-sagemaker-ml-m5-large",
+      "name": "SageMaker ml.m5.large",
+      "category": "ai-ml",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.115,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Machine learning training instance",
+      "specifications": {
+        "vCPUs": "2",
+        "Memory": "8 GiB",
+        "GPU": "None",
+        "Use Case": "Training/Inference"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "azure-openai-gpt4",
+      "name": "Azure OpenAI GPT-4",
+      "category": "ai-ml",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.03,
+        "unit": "1K input tokens",
+        "billingType": "per-request"
+      },
+      "description": "GPT-4 via Azure OpenAI",
+      "specifications": {
+        "Model": "GPT-4",
+        "Context": "128K tokens",
+        "Multimodal": "Yes",
+        "Fine-tuning": "Yes"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "azure-machine-learning-cpu",
+      "name": "Azure ML Standard D2s v3",
+      "category": "ai-ml",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.096,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Machine learning compute instance",
+      "specifications": {
+        "vCPUs": "2",
+        "Memory": "8 GiB",
+        "GPU": "None",
+        "Use Case": "Training/Development"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "gcp-vertex-ai-palm",
+      "name": "Vertex AI PaLM",
+      "category": "ai-ml",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.0005,
+        "unit": "1K characters",
+        "billingType": "per-request"
+      },
+      "description": "PaLM large language model",
+      "specifications": {
+        "Model": "PaLM 2",
+        "Context": "32K tokens",
+        "Multimodal": "Limited",
+        "Fine-tuning": "Yes"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "gcp-vertex-ai-training",
+      "name": "Vertex AI Training n1-standard-4",
+      "category": "ai-ml",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.19,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Custom machine learning training",
+      "specifications": {
+        "vCPUs": "4",
+        "Memory": "15 GB",
+        "GPU": "Optional",
+        "Use Case": "Custom Training"
+      },
+      "region": "us-central1"
+    },
+    {
+      "id": "aws-vpc",
+      "name": "VPC NAT Gateway",
+      "category": "networking",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.045,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Managed NAT gateway service",
+      "specifications": {
+        "Bandwidth": "Up to 45 Gbps",
+        "Availability": "High",
+        "Data Processing": "$0.045/GB",
+        "IP Address": "Static"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "aws-alb",
+      "name": "Application Load Balancer",
+      "category": "networking",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.0225,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Layer 7 load balancer",
+      "specifications": {
+        "Type": "Application (HTTP/HTTPS)",
+        "Targets": "Unlimited",
+        "Health Checks": "Included",
+        "SSL Termination": "Yes"
+      },
+      "region": "us-east-1"
+    },
+    {
+      "id": "azure-load-balancer",
+      "name": "Azure Load Balancer",
+      "category": "networking",
+      "provider": "azure",
+      "pricing": {
+        "usd": 0.025,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Layer 4 load balancer",
+      "specifications": {
+        "Type": "Network (TCP/UDP)",
+        "Availability": "99.99%",
+        "Health Probes": "Included",
+        "HA Ports": "Yes"
+      },
+      "region": "east-us"
+    },
+    {
+      "id": "gcp-load-balancer",
+      "name": "Cloud Load Balancing",
+      "category": "networking",
+      "provider": "gcp",
+      "pricing": {
+        "usd": 0.025,
+        "unit": "hour",
+        "billingType": "hourly"
+      },
+      "description": "Global load balancing service",
+      "specifications": {
+        "Type": "HTTP(S)/TCP/UDP",
+        "Global": "Yes",
+        "Autoscaling": "Yes",
+        "CDN Integration": "Yes"
+      },
+      "region": "global"
+    },
+    {
+      "id": "aws-cloudfront",
+      "name": "CloudFront CDN",
+      "category": "networking",
+      "provider": "aws",
+      "pricing": {
+        "usd": 0.085,
+        "unit": "GB data transfer",
+        "billingType": "per-gb"
+      },
+      "description": "Content delivery network",
+      "specifications": {
+        "Edge Locations": "400+",
+        "SSL/TLS": "Free certificates",
+        "Real-time Logs": "Available",
+        "Origin Shield": "Optional"
+      },
+      "region": "global"
+    }
+  ]
+}
