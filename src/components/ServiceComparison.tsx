@@ -93,16 +93,16 @@ export const ServiceComparison = () => {
             <div className="space-y-2">
               <label className="text-sm font-medium">Category</label>
               <Select
-                value={filters.category || ''}
+                value={filters.category || 'all'}
                 onValueChange={(value) => 
-                  setFilters({ ...filters, category: value as ServiceCategory || undefined })
+                  setFilters({ ...filters, category: value === 'all' ? undefined : value as ServiceCategory })
                 }
               >
                 <SelectTrigger>
                   <SelectValue placeholder="All categories" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All categories</SelectItem>
+                  <SelectItem value="all">All categories</SelectItem>
                   {serviceCategories.map(cat => (
                     <SelectItem key={cat.value} value={cat.value}>
                       {cat.icon} {cat.label}
