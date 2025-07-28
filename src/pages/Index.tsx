@@ -7,7 +7,7 @@ import { AlertsManager } from '@/components/AlertsManager';
 import { Toaster } from '@/components/ui/toaster';
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('calculator');
 
   const renderContent = () => {
     switch (activeTab) {

@@ -5,26 +5,35 @@ import { cloudServices, USD_TO_INR } from '@/lib/cloudData';
 import { PricingChart } from './PricingChart';
 
 export const Dashboard = () => {
-  const totalServices = cloudServices.length;
-  const avgPriceUSD = cloudServices.reduce((acc, service) => acc + service.pricing.usd, 0) / totalServices;
+  // Show only basic starter services for realistic first-time user experience
+  const basicServices = cloudServices.filter(service => 
+    service.name.includes('micro') || 
+    service.name.includes('small') || 
+    service.name.includes('e2-micro') ||
+    service.name.includes('t3.micro') ||
+    service.name.includes('B1s')
+  );
+  
+  const totalServices = basicServices.length;
+  const avgPriceUSD = basicServices.reduce((acc, service) => acc + service.pricing.usd, 0) / totalServices;
   const avgPriceINR = avgPriceUSD * USD_TO_INR;
   
   const providerCounts = {
-    aws: cloudServices.filter(s => s.provider === 'aws').length,
-    azure: cloudServices.filter(s => s.provider === 'azure').length,
-    gcp: cloudServices.filter(s => s.provider === 'gcp').length,
+    aws: basicServices.filter(s => s.provider === 'aws').length,
+    azure: basicServices.filter(s => s.provider === 'azure').length,
+    gcp: basicServices.filter(s => s.provider === 'gcp').length,
   };
 
-  const categoryCounts = cloudServices.reduce((acc, service) => {
+  const categoryCounts = basicServices.reduce((acc, service) => {
     acc[service.category] = (acc[service.category] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
-  const lowestPriceService = cloudServices.reduce((lowest, service) => 
+  const lowestPriceService = basicServices.reduce((lowest, service) => 
     service.pricing.usd < lowest.pricing.usd ? service : lowest
   );
 
-  const highestPriceService = cloudServices.reduce((highest, service) => 
+  const highestPriceService = basicServices.reduce((highest, service) => 
     service.pricing.usd > highest.pricing.usd ? service : highest
   );
 
@@ -40,7 +49,7 @@ export const Dashboard = () => {
           <CardContent>
             <div className="text-2xl font-bold">{totalServices}</div>
             <p className="text-xs text-muted-foreground">
-              Across 3 cloud providers
+              Basic tier services
             </p>
           </CardContent>
         </Card>
